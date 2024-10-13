@@ -12,3 +12,25 @@ The `print()` function is a handy way of displaying an output. Mostly, the `prin
     ```python
     print('Hello World')
     ```
+    
+* Printing numeric values using the `print()` function:
+    ```python
+    print(1)
+    ```
+
+   `print()` function has the ability to print floating point values as well. 
+
+    ```python
+    print(1.58)
+    ```
+
+* Printing boolean values using the `print()` function:
+    ```python
+    print(True)
+    ```
+
+   Similarly, `False` can be printing by passing `False` to the `print` function. Please note that except character collections (String) no other output used a "" or '' for printing.
+
+    ```python
+    print(1.58)
+    ```
