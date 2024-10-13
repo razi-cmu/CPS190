@@ -44,3 +44,72 @@ The `print()` function is a handy way of displaying an output. Mostly, the `prin
   ```python
   print(2**3 - 8/5 + 2**-1)
   ```
+
+  The above might not be too easy to read. It is a good idea to store them in variables and then use/print them:
+  ```python
+  z = 2**3 - 8/5 + 2**-1
+  print(z)
+  ```
+
+  The above expression can be furthe simplified by dividing it into different components as below:
+  ```python
+  a = 2**3
+  b = 8/5
+  c = 2**-1
+
+  z = a - b + c
+  print(z)
+  ```
+  `a`, `b`, `c` and `z` in the above Python code are called `Variables`. We'll talk about variables in more detail in coming weeks.
+
+## Working with real problems in Python
+We have seen the working of a `print()` function with strings, numerics and expressions. We can can combine them all to solve a real world problem. Let's write code to solve a real world problem:
+
+### Problem 
+Write a Python program that calculates the salary of an employee provided wage rate, hour and weeks. Print the calculated salary on the console in `Salary: 1234` format.
+
+```python
+wage = 20
+hours = 40
+weeks = 52
+salary = wage * hours * weeks
+
+print('Salary:', salary)
+```
+
+Let's further enhance our example by getting the input of wage, hours and weeks from the user instead of hardcoding them.
+
+```python
+wage = input("Enter the wage rate: ")
+hours = input("Enter number of hours worked: ")
+weeks = input("Enter number of weeks worked: ")
+
+salary = wage * hours * weeks
+print('Salary:', salary)
+
+```
+
+The above program might behave unexpectedly and instead of showing us the Salary, it shows us a message like below:
+```python
+Traceback (most recent call last):
+  File "Path\to\your\Python\file\Week_1.py", line 5, in <module>
+    salary = wage * hours * weeks
+             ~~~~~^~~~~~~
+TypeError: can't multiply sequence by non-int of type 'str'
+```
+This is Python's way of giving you errors. It actually means that Python was not able to perform the operation. It gives you the line number of the error, e.g., `line 5` and the type of error, e.g., `TypeError: can't multiply sequence by non-int of type 'str'`.
+
+The error is telling us that Python cannot perform arithematic operation on str (strings). The problem here is that `input()` function returns a string instead of a numeric value and obviously we cannot perform mathematical operations on strings; they have to be numeric values. So, what do we do? No problem, we just convert strings into numeric values. We can fix the above program but updating it as below:
+```python
+wage = input("Enter the wage rate: ")
+hours = input("Enter number of hours worked: ")
+weeks = input("Enter number of weeks worked: ")
+
+wage = int(wage)
+hours = int(hours)
+weeks = int(weeks)
+
+salary = wage * hours * weeks
+print('Salary:', salary)
+```
+In the above code, `wage = int(wage)` means that we take the current value of wage, convert it into integer (numberic) and store it back in `wage`.
