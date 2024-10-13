@@ -34,3 +34,13 @@ The `print()` function is a handy way of displaying an output. Mostly, the `prin
     ```python
     print(1.58)
     ```
+
+* Printing expressions using the `print()` function:
+    ```python
+    print(2+2)
+    ```
+
+    The `print` function can also solve and print mathematical expressions. It is normally not recommended to perform printing of complex mathematical expression directly in the `print` function to avoid readability issues. For example an arithematic expression $`2^3 - \frac{8}{5} + 2^{-1}`$ can be written and evaluated in Python using the following code:
+  ```python
+  print(2**3 - 8/5 + 2**-1)
+  ```
