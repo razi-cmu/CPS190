@@ -112,4 +112,21 @@ weeks = int(weeks)
 salary = wage * hours * weeks
 print('Salary:', salary)
 ```
-In the above code, `wage = int(wage)` means that we take the current value of wage, convert it into integer (numberic) and store it back in `wage`.
+In the above code, `wage = int(wage)` means that we take the current value of wage, convert it into integer (numeric) and store it back in `wage`. Sames goes with hours and weeks as well. Since, wage, hours and weeks are now numeric, we can perform arithematic operation and then print.
+
+You might have noticed an addition in the `print()` function. Instead of getting 1 input (argument), it is now getting 2 inputs (arguments), `'Salary'` and `salary` separate by `,`. This is Python's way of showing two outputs on the console using the same `print()` function.
+
+### `input()` function
+The `input()` function in Python is used to get user input. When you call input(), it pauses the program and waits for the user to type something and press Enter. The input is then returned as a string.
+
+The above program can be further simplified by getting the input from the user and converting it into numeric value on the same line.
+```python
+wage = int(input("Enter the wage rate: ")) # user input and numeric conversion on the same line
+hours = int(input("Enter number of hours worked: "))
+weeks = int(input("Enter number of weeks worked: "))
+
+salary = wage * hours * weeks
+print('Salary:', salary)
+```
+
+You might have noticed `# user input and numeric conversion on the same line` in the above code. This is called a comment which is there to provide information about the line of code and would not have any impact on the program or its output.
