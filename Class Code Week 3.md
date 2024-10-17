@@ -78,3 +78,14 @@ else:
     print("odd")
 
 ```
+
+## Conditional Expressions
+A conditional expression has three operands and thus is sometimes referred to as a ternary operation. They are concised form of a regular if-else statement
+```python
+number = 17
+
+result = "Even" if number % 2 == 0 else "Odd"
+
+print(result)
+
+```
