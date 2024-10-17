@@ -52,51 +52,56 @@ for character in word:
     print(character)
 ```
 
-## If-elseif-else Branches
-The program above would start acting strange as soon as we change `marks = 95`. The output will display all the grades except `F`. This is happening because each if statement is independent and they are checked against `marks = 95`. This behavior can be changed by packing all the if statement into one block making sure that only 1 if statement is executed at a time. if `marks = 95`, only first if condition should run and rest of them should be skipped. This can be achieved using if-elseif-else structure.
-```python
-marks = 95
+## Nested Loops
+A nested loop is a loop that appears as part of the body of another loop. The nested loops are commonly referred to as the outer loop and inner loop.
 
-if marks >= 90:
-    print("A")
-
-elif marks >= 80:
-    print("B")
-
-elif marks >= 70:
-    print("C")
-
-elif marks >= 60:
-    print("D")
-
-elif marks < 60:
-    print("F")
-
+Let's write a program that creates a grid of `*`. We are planning to create a 5x5 grid of `*`. The output should be something like below:
 ```
-Please note that elseif in Python is written as `elif`.
+*****
+*****
+*****
+*****
+*****
+```
+The above can be achieved easily with 5 `print()` statements. However, imagine modifying it to a grid of 100x100. With loops, number of print statements would not change and a slight change in how many rows and columns we need can provide us a grid of any size.
 
-## Nested if-else Statements
-A branch's statements can include any valid statements, including another if-else statement, which are known as nested if-else statements. The program below checks for even numbers and whether they are greater or less than 10 using nested if-else statements
 ```python
-number = 16
-
-if number % 2 == 0:
-    if number < 10:
-        print("Number is even and less than 10")
-    else:
-        print("Number is even and greater than 10")
-else:
-    print("odd")
-
+rows = 0
+while (rows < 5):
+    columns = 0
+    while (columns < 5):
+        print('*', end='')
+        columns+=1
+    print()
+    rows+=1
 ```
 
-## Conditional Expressions
-A conditional expression has three operands and thus is sometimes referred to as a ternary operation. They are concised form of a regular if-else statement
+## Break Statement
+A break statement in a loop causes the loop to exit immediately.
+
+Let's create a program that keeps generating random numbers till it generates `5`. As soon as the generated number is `5`, the program breaks the loop and exits the program.
 ```python
-number = 17
+import random
 
-result = "Even" if number % 2 == 0 else "Odd"
+while (True):
+    number = int(random.random() * 10)
+    print('Number generated: ', number)
+    if (number == 5):
+        break
+```
 
-print(result)
+We are using a built-in library `random` to generate random numbers using `random()` function.
+
+## Continue Statement
+A continue statement in a loop causes an immediate jump to the while or for loop header statement.
+
+Let's create a program that reads all the characters of a word and skip an `e` in it.
+```python
+word = 'Hello'
+
+for ch in word:
+    if (ch == 'e'):
+        continue
+    print(ch, end='')
 
 ```
