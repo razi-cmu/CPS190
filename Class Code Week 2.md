@@ -62,7 +62,7 @@ print(name)
 ```
 
 ### Integer
-An integer is a whole number that can be positive, negative, or zero, representing discrete values like counts or indexes.
+An integer is a whole number that can be positive, negative, or zero, representing discrete values like counts or indexes. The program below helps in finding the area of the Triangle.
 
 ```python
 base = 10
@@ -71,4 +71,29 @@ height = 5
 area = (base * height)/2
 
 print("Area:", area)
+```
+
+### Float
+A float is a number that includes a decimal point, representing real numbers with fractional parts. The program below helps in finding the area of the circle.
+
+```python
+radius = 4.2
+pi = 3.14
+
+area = pi * (radius**2)
+
+print(area)
+```
+
+Instead of hardcoding the value of `pi`, we can use built-in `Math` library.
+```python
+import math
+
+radius = 4.2
+
+print("Value of Pi:", math.pi)
+
+area = math.pi * (radius**2)
+
+print(area)
 ```
