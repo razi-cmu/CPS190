@@ -27,25 +27,29 @@ while (i <= 10):
     i = i + 1
 ```
 
-## Multiple Distinct if statements
-Sometimes the programmer has multiple if statements in sequence. Each if statement is independent and more than one branch can execute. The program below is expected to output `F` matching the last `if` condition criterion.
+Let's now print all the even numbers from 1 and 20 using `while` loop.
 ```python
-marks = 55
+i = 1
+while (i <= 20):
+    if (i % 2 == 0):
+        print(i)
+    i = i + 1
 
-if marks >= 90:
-    print("A")
+```
 
-if marks >= 80:
-    print("B")
+## For Loop
+A for loop statement loops over each element in a container one at a time, assigning a variable with the next element that can then be used in the loop body. Let's print even numbers from 1 and 20 using a `for` loop.
+```python
+for i in range(1, 21):
+    if (i%2 == 0):
+        print(i)
+```
+A `for` loop helps in iterating through strings or any other collections (list, dictionary etc. coming up)
+```python
+word = "Python"
 
-if marks >= 70:
-    print("C")
-
-if marks >= 60:
-    print("D")
-
-if marks < 60:
-    print("F")
+for character in word:
+    print(character)
 ```
 
 ## If-elseif-else Branches
