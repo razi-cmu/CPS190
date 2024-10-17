@@ -20,7 +20,7 @@ else:
     print("fail")
 ```
 
-## Multiple Dstinct if statements
+## Multiple Distinct if statements
 Sometimes the programmer has multiple if statements in sequence. Each if statement is independent and more than one branch can execute. The program below is expected to output `F` matching the last `if` condition criterion.
 ```python
 marks = 55
@@ -39,4 +39,42 @@ if marks >= 60:
 
 if marks < 60:
     print("F")
+```
+
+## If-elseif-else Branches
+The program above would start acting strange as soon as we change `marks = 95`. The output will display all the grades except `F`. This is happening because each if statement is independent and they are checked against `marks = 95`. This behavior can be changed by packing all the if statement into one block making sure that only 1 if statement is executed at a time. if `marks = 95`, only first if condition should run and rest of them should be skipped. This can be achieved using if-elseif-else structure.
+```python
+marks = 95
+
+if marks >= 90:
+    print("A")
+
+elif marks >= 80:
+    print("B")
+
+elif marks >= 70:
+    print("C")
+
+elif marks >= 60:
+    print("D")
+
+elif marks < 60:
+    print("F")
+
+```
+Please note that elseif in Python is written as `elif`.
+
+## Nested if-else Statements
+A branch's statements can include any valid statements, including another if-else statement, which are known as nested if-else statements. The program below checks for even numbers and whether they are greater or less than 10 using nested if-else statements
+```python
+number = 16
+
+if number % 2 == 0:
+    if number < 10:
+        print("Number is even and less than 10")
+    else:
+        print("Number is even and greater than 10")
+else:
+    print("odd")
+
 ```
