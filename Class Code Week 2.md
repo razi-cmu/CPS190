@@ -7,74 +7,50 @@ number = 10
 
 print(number)
 ```
-    Strings can be printing using the `print()` function with "" or ''. Below code will also produce the same output on the console, e.g., `Hello World`
-
-    ```python
-    print('Hello World')
-    ```
-    
-* Printing numeric values using the `print()` function:
-    ```python
-    print(1)
-    ```
-
-   `print()` function has the ability to print floating point values as well. 
-
-    ```python
-    print(1.58)
-    ```
-
-* Printing boolean values using the `print()` function:
-    ```python
-    print(True)
-    ```
-
-   Similarly, `False` can be printing by passing `False` to the `print` function. Please note that except character collections (String) no other output used a "" or '' for printing.
-
-    ```python
-    print(1.58)
-    ```
-
-* Printing expressions using the `print()` function:
-    ```python
-    print(2+2)
-    ```
-
-    The `print` function can also solve and print mathematical expressions. It is normally not recommended to perform printing of complex mathematical expression directly in the `print` function to avoid readability issues. For example an arithematic expression $`2^3 - \frac{8}{5} + 2^{-1}`$ can be written and evaluated in Python using the following code:
-  ```python
-  print(2**3 - 8/5 + 2**-1)
-  ```
-
-  The above might not be too easy to read. It is a good idea to store them in variables and then use/print them:
-  ```python
-  z = 2**3 - 8/5 + 2**-1
-  print(z)
-  ```
-
-  The above expression can be furthe simplified by dividing it into different components as below:
-  ```python
-  a = 2**3
-  b = 8/5
-  c = 2**-1
-
-  z = a - b + c
-  print(z)
-  ```
-  `a`, `b`, `c` and `z` in the above Python code are called `Variables`. We'll talk about variables in more detail in coming weeks.
-
-## Working with real problems in Python
-We have seen the working of a `print()` function with strings, numerics and expressions. We can can combine them all to solve a real world problem. Let's write code to solve a real world problem:
-
-### Problem 
-Write a Python program that calculates the salary of an employee provided wage rate, hour and weeks. Print the calculated salary on the console in `Salary: 1234` format.
+Variables hold the value till a new value is assigned.
 
 ```python
-wage = 20
-hours = 40
-weeks = 52
-salary = wage * hours * weeks
+number = 10
 
-print('Salary:', salary)
+print("Original Value")
+print(number)
+
+number = 7
+print("Modified Value")
+print(number)
+```
+    
+Above can be simplified into two print statements
+```python
+number = 10
+
+print("Original Value:", number)
+
+number = 7
+print("Modified Value:", number)
+```
+
+Good programming practice is to give variables meaningful names
+```python
+base = 10
+height = 5
+
+area = (base * height)/2
+
+print("Area:", area)
+```
+
+## Types in Python
+Python support different data types that can accomodate characters, numbers and floating point values.
+
+### String
+A string is a sequence of characters that represents textual data like a person's name, a location, or a message to the user. A string can also be stored in a variable
+
+```python
+first_name = 'Steve'
+last_name = 'Jobs'
+
+print(first_name, last_name)
 ```
 
 Let's further enhance our example by getting the input of wage, hours and weeks from the user instead of hardcoding them.
