@@ -64,34 +64,27 @@ This is the third line."""
 
 get_lines(text, 2)
 
-
 ```
 
-## Keyword Arguments
-Python provides for keyword arguments that allow arguments to map to parameters by name, instead of implicitly by position in the argument list. This makes function calls more readable and easier to understand.
+## String Formatting
+F-string allows you to format selected parts of a string. Let's make a use of F-String to identify if a given string is a palindrome or not e.g., reads same as backwards?
 
 ```python
-def calculate_sum(start, end):
-    sum = 0
-    for i in range(start, end):
-        sum = sum + i
+def is_palindrome(text):
+    return text == text[::-1]
 
-    return sum
+text = 'madam'
 
-print(calculate_sum(start=1, end=6))
+print(f"{text} is a Palindrome" if is_palindrome(text) else f"{text} is not a Palindrome")
 ```
 
-## Default Parameter Values
-A function can have a default parameter value for one or more parameters, meaning that a function call can optionally omit an argument, and the default parameter value will be substituted for the corresponding omitted argument.
+## Joining Strings
+The `join()` string method performs the inverse operation of split() by joining a list of strings together to create a single string.
 
-Let's update our program so that `end` is always `6`.
 ```python
-def calculate_sum(start, end=6):
-    sum = 0
-    for i in range(start, end):
-        sum = sum + i
+words = ["Python", "is", "a", "powerful", "programming", "language"]
 
-    return sum
+sentence = " " .join(words)
 
-print(calculate_sum(start=1))
+print(sentence)
 ```
