@@ -21,35 +21,50 @@ print('First character:', text[0])
 print('Last character:', text[-1])
 print('No. of Characters:', len(text))
 ```
-## Return Statement
-The function return statement is used to exit from a function and go back to the function caller and return the specified value or data item to the caller. In some cases, you might not want function to print but to simply return the result of the calculation.
+## String Slicing
+Multiple consecutive characters can be read using slice notation. The code below will print first two lines of the string using String Slicing.
 
-The function below will calculate the sum of all the numbers from 1 to 5 and then return the result, e.g., `15` instead of printing it. Once the result is returned, we might want to perform some operation on it, e.g., printing.
 ```python
-def calculate_sum():
-    sum = 0
-    for i in range(1, 6):
-        sum = sum + i
+text = """This is a multi line string.
+This is the second line.
+This is the third line."""
 
-    return sum
-
-print(calculate_sum())
+print('First Line:', text[0:28])
+print('Second Line:', text[29:53])
 ```
 
-## Functions with Arguments
+## String Functions
 
-Arguments are the values passed inside the parenthesis of the function. These values provide extra information to the function which that make these functions more flexible.
-
+String objects have many useful methods to do things like replacing characters, converting to lowercase, capitalizing the first character, etc. The program below will convert all the lines of text into upper and lower case.
 
 ```python
-def calculate_sum(start, end):
-    sum = 0
-    for i in range(start, end):
-        sum = sum + i
+text = """This is a multi line string.
+This is the second line.
+This is the third line."""
 
-    return sum
+print(text.upper())
+print(text.lower())
 
-print(calculate_sum(1, 6))
+```
+
+Let's get a bit more creative now. How about we write a function that takes in the text along with number of lines and prints us only that many lines.
+
+```python
+def get_lines(text, number):
+    
+    lines = text.splitlines()
+    
+    for line in lines[:number]:
+        print(line)
+
+
+text = """This is a multi line string.
+This is the second line.
+This is the third line."""
+
+get_lines(text, 2)
+
+
 ```
 
 ## Keyword Arguments
