@@ -8,7 +8,10 @@ marks = 65
 if marks > 60:
     print("pass")
 ```
-
+Below will be the output of the program:
+```
+pass
+```
 ## if-else Branching
 The above program would only display pass if marks are greater than 65, however, it would display anything if marks are less than 65. In order to tackle both pass and fail conditions, if-else branching can be used.
 ```python
@@ -19,7 +22,10 @@ if marks > 60:
 else:
     print("fail")
 ```
-
+Below will be the output of the program:
+```
+pass
+```
 ## Multiple Distinct if statements
 Sometimes the programmer has multiple if statements in sequence. Each if statement is independent and more than one branch can execute. The program below is expected to output `F` matching the last `if` condition criterion.
 ```python
@@ -40,7 +46,10 @@ if marks >= 60:
 if marks < 60:
     print("F")
 ```
-
+Below will be the output of the program:
+```
+F
+```
 ## If-elseif-else Branches
 The program above would start acting strange as soon as we change `marks = 95`. The output will display all the grades except `F`. This is happening because each if statement is independent and they are checked against `marks = 95`. This behavior can be changed by packing all the if statement into one block making sure that only 1 if statement is executed at a time. if `marks = 95`, only first if condition should run and rest of them should be skipped. This can be achieved using if-elseif-else structure.
 ```python
@@ -62,6 +71,11 @@ elif marks < 60:
     print("F")
 
 ```
+Below will be the output of the program:
+```
+A
+```
+
 Please note that elseif in Python is written as `elif`.
 
 ## Nested if-else Statements
@@ -78,7 +92,10 @@ else:
     print("odd")
 
 ```
-
+Below will be the output of the program:
+```
+Number is even and greater than 10
+```
 ## Conditional Expressions
 A conditional expression has three operands and thus is sometimes referred to as a ternary operation. They are concised form of a regular if-else statement
 ```python
@@ -88,4 +105,8 @@ result = "Even" if number % 2 == 0 else "Odd"
 
 print(result)
 
+```
+Below will be the output of the program:
+```
+Odd
 ```
