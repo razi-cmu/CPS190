@@ -1,4 +1,4 @@
-# Week 5: Strings
+# Week 6: Strings
 
 ## Strings Basics
 Strings are a sequence type, having characters ordered by index from left to right. Below is a multiline string stored in a variable in Python.
