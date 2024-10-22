@@ -12,6 +12,10 @@ def calculate_sum():
 
 calculate_sum()
 ```
+Below will be the output of the above program:
+```
+15
+```
 
 ## Return Statement
 The function return statement is used to exit from a function and go back to the function caller and return the specified value or data item to the caller. In some cases, you might not want function to print but to simply return the result of the calculation.
@@ -26,6 +30,10 @@ def calculate_sum():
     return sum
 
 print(calculate_sum())
+```
+Below will be the output of the above program:
+```
+15
 ```
 
 ## Functions with Arguments
@@ -43,7 +51,10 @@ def calculate_sum(start, end):
 
 print(calculate_sum(1, 6))
 ```
-
+Below will be the output of the above program:
+```
+15
+```
 ## Keyword Arguments
 Python provides for keyword arguments that allow arguments to map to parameters by name, instead of implicitly by position in the argument list. This makes function calls more readable and easier to understand.
 
@@ -57,7 +68,10 @@ def calculate_sum(start, end):
 
 print(calculate_sum(start=1, end=6))
 ```
-
+Below will be the output of the above program:
+```
+15
+```
 ## Default Parameter Values
 A function can have a default parameter value for one or more parameters, meaning that a function call can optionally omit an argument, and the default parameter value will be substituted for the corresponding omitted argument.
 
@@ -71,4 +85,8 @@ def calculate_sum(start, end=6):
     return sum
 
 print(calculate_sum(start=1))
+```
+Below will be the output of the above program:
+```
+15
 ```
