@@ -7,50 +7,71 @@ The `print()` function is a handy way of displaying an output. Mostly, the `prin
     ```python
     print("Hello World")
     ```
+    Below will be the output of the program:
+    ```
+    Hello World
+    ```
     Strings can be printing using the `print()` function with "" or ''. Below code will also produce the same output on the console, e.g., `Hello World`
 
     ```python
     print('Hello World')
     ```
-    
+    Below will be the output of the program:
+    ```
+    Hello World
+    ```
 * Printing numeric values using the `print()` function:
     ```python
     print(1)
     ```
-
+    Below will be the output of the program:
+    ```
+    1
+    ```
    `print()` function has the ability to print floating point values as well. 
 
     ```python
     print(1.58)
     ```
-
+    Below will be the output of the program:
+    ```
+    1.58
+    ```
 * Printing boolean values using the `print()` function:
     ```python
     print(True)
     ```
-
-   Similarly, `False` can be printing by passing `False` to the `print` function. Please note that except character collections (String) no other output used a "" or '' for printing.
-
-    ```python
-    print(1.58)
+    Below will be the output of the program:
     ```
+    True
+    ```
+   Similarly, `False` can be printed by passing `False` to the `print` function. Please note that except character collections (String) no other output used a "" or '' for printing.
 
 * Printing expressions using the `print()` function:
     ```python
     print(2+2)
     ```
-
+    Below will be the output of the program:
+    ```
+    4
+    ```
     The `print` function can also solve and print mathematical expressions. It is normally not recommended to perform printing of complex mathematical expression directly in the `print` function to avoid readability issues. For example an arithematic expression $`2^3 - \frac{8}{5} + 2^{-1}`$ can be written and evaluated in Python using the following code:
   ```python
   print(2**3 - 8/5 + 2**-1)
   ```
-
+    Below will be the output of the program:
+    ```
+    6.9
+    ```
   The above might not be too easy to read. It is a good idea to store them in variables and then use/print them:
   ```python
   z = 2**3 - 8/5 + 2**-1
   print(z)
   ```
-
+    Below will be the output of the program:
+    ```
+    6.9
+    ```
   The above expression can be furthe simplified by dividing it into different components as below:
   ```python
   a = 2**3
@@ -60,7 +81,12 @@ The `print()` function is a handy way of displaying an output. Mostly, the `prin
   z = a - b + c
   print(z)
   ```
+  
   `a`, `b`, `c` and `z` in the above Python code are called `Variables`. We'll talk about variables in more detail in coming weeks.
+  Below will be the output of the program:
+    ```
+    6.9
+    ```
 
 ## Working with real problems in Python
 We have seen the working of a `print()` function with strings, numerics and expressions. We can can combine them all to solve a real world problem. Let's write code to solve a real world problem:
@@ -76,7 +102,10 @@ salary = wage * hours * weeks
 
 print('Salary:', salary)
 ```
-
+Below will be the output of the program:
+```
+Salary: 41600
+```
 Let's further enhance our example by getting the input of wage, hours and weeks from the user instead of hardcoding them.
 
 ```python
@@ -115,7 +144,13 @@ print('Salary:', salary)
 In the above code, `wage = int(wage)` means that we take the current value of wage, convert it into integer (numeric) and store it back in `wage`. Sames goes with hours and weeks as well. Since, wage, hours and weeks are now numeric, we can perform arithematic operation and then print.
 
 You might have noticed an addition in the `print()` function. Instead of getting 1 input (argument), it is now getting 2 inputs (arguments), `'Salary'` and `salary` separate by `,`. This is Python's way of showing two outputs on the console using the same `print()` function.
-
+Below will be the output of the program:
+```
+Enter the wage rate: 20
+Enter number of hours worked: 40
+Enter number of weeks worked: 52
+Salary: 41600
+```
 ### `input()` function
 The `input()` function in Python is used to get user input. When you call input(), it pauses the program and waits for the user to type something and press Enter. The input is then returned as a string.
 
@@ -130,3 +165,9 @@ print('Salary:', salary)
 ```
 
 You might have noticed `# user input and numeric conversion on the same line` in the above code. This is called a comment which is there to provide information about the line of code and would not have any impact on the program or its output.
+```
+Enter the wage rate: 20
+Enter number of hours worked: 40
+Enter number of weeks worked: 52
+Salary: 41600
+```
