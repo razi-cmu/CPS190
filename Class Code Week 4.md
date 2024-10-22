@@ -14,6 +14,19 @@ print(8)
 print(9)
 print(10)
 ```
+Below will be the output of the above program:
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
 The above will be a cumbersome job if we decided to print numbers from 1 to 1000.
 
 ## While Loop
@@ -26,7 +39,19 @@ while (i <= 10):
     print(i)
     i = i + 1
 ```
-
+Below will be the output of the above program:
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
 Let's now print all the even numbers from 1 and 20 using `while` loop.
 ```python
 i = 1
@@ -36,13 +61,38 @@ while (i <= 20):
     i = i + 1
 
 ```
-
+Below will be the output of the above program:
+```
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+```
 ## For Loop
 A for loop statement loops over each element in a container one at a time, assigning a variable with the next element that can then be used in the loop body. Let's print even numbers from 1 and 20 using a `for` loop.
 ```python
 for i in range(1, 21):
     if (i%2 == 0):
         print(i)
+```
+Below will be the output of the above program:
+```
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
 ```
 A `for` loop helps in iterating through strings or any other collections (list, dictionary etc. coming up)
 ```python
@@ -51,7 +101,15 @@ word = "Python"
 for character in word:
     print(character)
 ```
-
+Below will be the output of the above program:
+```
+P
+y
+t
+h
+o
+n
+```
 ## Nested Loops
 A nested loop is a loop that appears as part of the body of another loop. The nested loops are commonly referred to as the outer loop and inner loop.
 
@@ -89,7 +147,16 @@ while (True):
     if (number == 5):
         break
 ```
-
+Below will be the output of the above program (the output generated would be different everytime program runs):
+```
+Number generated:  4
+Number generated:  4
+Number generated:  6
+Number generated:  7
+Number generated:  7
+Number generated:  9
+Number generated:  5
+```
 We are using a built-in library `random` to generate random numbers using `random()` function.
 
 ## Continue Statement
@@ -104,4 +171,8 @@ for ch in word:
         continue
     print(ch, end='')
 
+```
+Below will be the output of the above program:
+```
+Hllo
 ```
