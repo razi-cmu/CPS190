@@ -170,17 +170,55 @@ Below will be the output of the above program:
 ```
 ['Melon', 'Apple', 'Banana', 'Grapes', 'Orange']
 ```
-## Joining Strings
-The `join()` string method performs the inverse operation of split() by joining a list of strings together to create a single string.
+## Dictionary Basics
+Dictionaries contain references to objects as key-value pairs — each key in the dictionary is associated with a value, much like each word in an English language dictionary is associated with a definition.
 
 ```python
-words = ["Python", "is", "a", "powerful", "programming", "language"]
+electronics = {
+    'name': 'Laptop',
+    'price': 500,
+    'quantity': 3
+}
 
-sentence = " " .join(words)
-
-print(sentence)
+print(electronics)
 ```
 Below will be the output of the above program:
 ```
-Python is a powerful programming language
+{'name': 'Laptop', 'price': 500, 'quantity': 3}
+```
+Dictionaries in Python can hold Lists as their items as well:
+```python
+electronics = {
+    'name': ['Laptop', 'Keyboard', 'Mouse'],
+    'price': [500, 100, 30],
+    'quantity': [3, 2, 4]
+}
+
+print(electronics)
+```
+Below will be the output of the above program:
+```
+{'name': ['Laptop', 'Keyboard', 'Mouse'], 'price': [500, 100, 30], 'quantity': [3, 2, 4]}
+```
+The above output is not very easy to understand. We can make it easier to understanding by iterating through each item along with their corresponding prices and quantities:
+```python
+def display(electronics):
+    for name, price, quantity in zip(electronics['name'], electronics['price'], electronics['quantity']):
+        print(f'There are {quantity} {name}s each with a price tag of {price}')
+
+
+electronics = {
+    'name': ['Laptop', 'Keyboard', 'Mouse'],
+    'price': [500, 100, 30],
+    'quantity': [3, 2, 4]
+}
+
+
+display(electronics)
+```
+Below will be the output of the above program:
+```
+There are 3 Laptops each with a price tag of 500
+There are 2 Keyboards each with a price tag of 100
+There are 4 Mouses each with a price tag of 30
 ```
