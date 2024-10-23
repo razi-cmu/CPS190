@@ -99,66 +99,76 @@ Below will be the output of the above program:
 ```
 ['Apple', 'Banana']
 ```
-## String Functions
 
-String objects have many useful methods to do things like replacing characters, converting to lowercase, capitalizing the first character, etc. The program below will convert all the lines of text into upper and lower case.
-
+### Sort / Reverse
+`sorted` method helps in sorting the list in ascending order:
 ```python
-text = """This is a multi line string.
-This is the second line.
-This is the third line."""
+fruits = ['Melon','Apple', 'Banana', 'Grapes', 'Orange']
 
-print(text.upper())
-print(text.lower())
+fruits.sort()
+
+print(fruits)
 ```
 Below will be the output of the above program:
 ```
-THIS IS A MULTI LINE STRING.
-THIS IS THE SECOND LINE.
-THIS IS THE THIRD LINE.
-this is a multi line string.
-this is the second line.
-this is the third line.
+['Apple', 'Banana', 'Grapes', 'Melon', 'Orange']
+```
+`reverse` method reverses the list:
+```python
+fruits = ['Melon','Apple', 'Banana', 'Grapes', 'Orange']
+
+fruits.reverse()
+
+print(fruits)
+```
+Below will be the output of the above program:
+```
+['Orange', 'Grapes', 'Banana', 'Apple', 'Melon']
 ```
 
-Let's get a bit more creative now. How about we write a function that takes in the text along with number of lines and prints us only that many lines.
+## Iterating over the List
+
+Looping through a sequence such as a list is so common that Python supports a construct called a for loop, specifically for iteration purposes. Let's write a function in Python that removes duplicates from a give list. We do this by iterating through the given list, item by item.
 
 ```python
-def get_lines(text, number):
+def remove_duplicates(fruits):
+    new_fruits = []
+
+    for fruit in fruits:
+        if fruit not in new_fruits:
+            new_fruits.append(fruit)
     
-    lines = text.splitlines()
-    
-    for line in lines[:number]:
-        print(line)
+    return new_fruits
 
+fruits = ['Melon','Apple', 'Banana', 'Grapes', 'Orange', 'Apple', 'Grapes']
 
-text = """This is a multi line string.
-This is the second line.
-This is the third line."""
-
-get_lines(text, 2)
-
+print(remove_duplicates(fruits))
 ```
 Below will be the output of the above program:
 ```
-This is a multi line string.
-This is the second line.
+['Melon', 'Apple', 'Banana', 'Grapes', 'Orange']
 ```
 
-## String Formatting
-F-string allows you to format selected parts of a string. Let's make a use of F-String to identify if a given string is a palindrome or not e.g., reads same as backwards?
+## List Comprehension
+The Python language provides a convenient construct, known as list comprehension, that iterates over a list, modifies each element, and returns a new list of the modified elements. 
+
+Let's rewrite the above program using List comprehension:
 
 ```python
-def is_palindrome(text):
-    return text == text[::-1]
+def remove_duplicates(fruits):
+    new_fruits = []
 
-text = 'madam'
+    [new_fruits.append(fruit) for fruit in fruits if fruit not in new_fruits]
+    
+    return new_fruits
 
-print(f"{text} is a Palindrome" if is_palindrome(text) else f"{text} is not a Palindrome")
+fruits = ['Melon','Apple', 'Banana', 'Grapes', 'Orange', 'Apple', 'Grapes']
+
+print(remove_duplicates(fruits))
 ```
 Below will be the output of the above program:
 ```
-madam is a Palindrome
+['Melon', 'Apple', 'Banana', 'Grapes', 'Orange']
 ```
 ## Joining Strings
 The `join()` string method performs the inverse operation of split() by joining a list of strings together to create a single string.
