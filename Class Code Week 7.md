@@ -186,6 +186,7 @@ Below will be the output of the above program:
 ```
 {'name': 'Laptop', 'price': 500, 'quantity': 3}
 ```
+
 Dictionaries in Python can hold Lists as their items as well:
 ```python
 electronics = {
@@ -200,6 +201,8 @@ Below will be the output of the above program:
 ```
 {'name': ['Laptop', 'Keyboard', 'Mouse'], 'price': [500, 100, 30], 'quantity': [3, 2, 4]}
 ```
+
+## Iterating over the Dictionary
 The above output is not very easy to understand. We can make it easier to understanding by iterating through each item along with their corresponding prices and quantities:
 ```python
 def display(electronics):
