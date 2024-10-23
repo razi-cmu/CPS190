@@ -44,23 +44,61 @@ Below will be the output of the above program:
 ```
 3.14
 ```
-## String Slicing
-Multiple consecutive characters can be read using slice notation. The code below will print first two lines of the string using String Slicing.
+## List Methods
+A list method can perform a useful operation on a list such as adding or removing elements, sorting, reversing, etc.
 
+### Append / Extend
+`append` method adds an element to the end of the list.
 ```python
-text = """This is a multi line string.
-This is the second line.
-This is the third line."""
+fruits = ['Apple', 'Banana', 'Grapes', 'Orange']
 
-print('First Line:', text[0:28])
-print('Second Line:', text[29:53])
+fruits.append('Melon')
+
+print(fruits)
 ```
 Below will be the output of the above program:
 ```
-First Line: This is a multi line string.
-Second Line: This is the second line.
+['Apple', 'Banana', 'Grapes', 'Orange', 'Melon']
+```
+`extend` method helps in adding a list of items to the end of the current list.
+```python
+fruits = ['Apple', 'Banana', 'Grapes', 'Orange']
+
+fruits.extend(['Melon', 'Strawberry'])
+
+print(fruits)
+```
+Below will be the output of the above program:
+```
+['Apple', 'Banana', 'Grapes', 'Orange', 'Melon', 'Strawberry']
 ```
 
+### Remove / Pop
+`remove` method removes a specific element from the list:
+```python
+fruits = ['Apple', 'Banana', 'Grapes', 'Orange']
+
+fruits.remove('Banana')
+
+print(fruits)
+```
+Below will be the output of the above program:
+```
+['Apple', 'Grapes', 'Orange']
+```
+`pop` removes the last element from the list or an element at a specific index:
+```python
+fruits = ['Apple', 'Banana', 'Grapes', 'Orange']
+
+fruits.pop(2) # removes Grapes
+fruits.pop()  # removes Orange
+
+print(fruits)
+```
+Below will be the output of the above program:
+```
+['Apple', 'Banana']
+```
 ## String Functions
 
 String objects have many useful methods to do things like replacing characters, converting to lowercase, capitalizing the first character, etc. The program below will convert all the lines of text into upper and lower case.
