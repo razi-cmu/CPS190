@@ -115,79 +115,72 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
-## List Comprehension
-The Python language provides a convenient construct, known as list comprehension, that iterates over a list, modifies each element, and returns a new list of the modified elements. 
-
-Let's rewrite the above program using List comprehension:
-
+There are a couple of ways of fixing the above program. One of the ways and probably the easiest one is to handle the exception inside the function:
 ```python
-def remove_duplicates(fruits):
-    new_fruits = []
+def sum_of_elements(numbers):
+    try:
+        sum = 0
+        for i in range(len(numbers) + 1):
+            sum += numbers[i]
 
-    [new_fruits.append(fruit) for fruit in fruits if fruit not in new_fruits]
+        return sum
+    except:
+        print("Index out of bound")
+        return 0
+
+numbers = [1, 2, 3, 4, 5]
+
+print(sum_of_elements(numbers))
+```
+
+Below will be the output of the above program:
+```
+Index out of bound
+0
+```
+
+Another way of fixing it is by handling the exception at the calling method, e.g., `print()`:
+```python
+def sum_of_elements(numbers):
     
-    return new_fruits
+    sum = 0
+    for i in range(len(numbers) + 1):
+        sum += numbers[i]
 
-fruits = ['Melon','Apple', 'Banana', 'Grapes', 'Orange', 'Apple', 'Grapes']
+    return sum
 
-print(remove_duplicates(fruits))
+
+numbers = [1, 2, 3, 4, 5]
+try:
+    print(sum_of_elements(numbers))
+except:
+    print('Index out of bound')
+
 ```
 Below will be the output of the above program:
 ```
-['Melon', 'Apple', 'Banana', 'Grapes', 'Orange']
+Index out of bound
 ```
-## Dictionary Basics
-Dictionaries contain references to objects as key-value pairs — each key in the dictionary is associated with a value, much like each word in an English language dictionary is associated with a definition.
+## Finally
+Python provides a keyword finally, which is always executed after the try and except blocks.
 
 ```python
-electronics = {
-    'name': 'Laptop',
-    'price': 500,
-    'quantity': 3
-}
+try:
+    result = 5/0 
+    print(result)
 
-print(electronics)
+except ZeroDivisionError:
+    print("Can't divide by zero")
+
+finally:
+    print('This is always executed')
+
+print('The program exited successfully.')
 ```
 Below will be the output of the above program:
 ```
-{'name': 'Laptop', 'price': 500, 'quantity': 3}
+Can't divide by zero
+This is always executed
+The program exited successfully.
 ```
-
-Dictionaries in Python can hold Lists as their items as well:
-```python
-electronics = {
-    'name': ['Laptop', 'Keyboard', 'Mouse'],
-    'price': [500, 100, 30],
-    'quantity': [3, 2, 4]
-}
-
-print(electronics)
-```
-Below will be the output of the above program:
-```
-{'name': ['Laptop', 'Keyboard', 'Mouse'], 'price': [500, 100, 30], 'quantity': [3, 2, 4]}
-```
-
-## Iterating over the Dictionary
-The above output is not very easy to understand. We can make it easier to understanding by iterating through each item along with their corresponding prices and quantities:
-```python
-def display(electronics):
-    for name, price, quantity in zip(electronics['name'], electronics['price'], electronics['quantity']):
-        print(f'There are {quantity} {name}s each with a price tag of {price}')
-
-
-electronics = {
-    'name': ['Laptop', 'Keyboard', 'Mouse'],
-    'price': [500, 100, 30],
-    'quantity': [3, 2, 4]
-}
-
-
-display(electronics)
-```
-Below will be the output of the above program:
-```
-There are 3 Laptops each with a price tag of 500
-There are 2 Keyboards each with a price tag of 100
-There are 4 Mouses each with a price tag of 30
-```
+The above message `This is always executed` will still be executed if exception does not occur. This allows a programmer to specify clean-up actions that are always executed.
