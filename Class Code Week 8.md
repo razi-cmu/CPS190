@@ -30,9 +30,11 @@ An error occured. x is not defined
 ## Common Exception Types
 There are several types of exceptions available in Python. A common one is `ZeroDivisionError` that occurs when a number is divided by zero
 ```python
-fruits = ['Apple', 'Banana', 'Grapes', 'Orange', [True, 3.14]]
+number = 5
+result = number / 0
+print(result)
 
-print(fruits[0])
+print('Program exited successfully')
 ```
 Below will be the output of the above program:
 ```
@@ -49,18 +51,18 @@ try:
     result = number / 0
     print(result)
 except:
-    print('Cannot divided by zero.')
+    print('Cannot divide by zero.')
 
 print('Program exited successfully')
 
 ```
 Below will be the output of the above program:
 ```
-Cannot divided by zero.
+Cannot divide by zero.
 Program exited successfully
 ```
-## Multiple Exception Handler
-A list method can perform a useful operation on a list such as adding or removing elements, sorting, reversing, etc.
+## Multiple Exception Handlers
+Multiple Exception Handlers can be introduced in a try-except. The program below demonstrates the use of two different types of handlers; one for ZeroDivisionError and the other is NameError
 
 ```python
 try:
@@ -84,29 +86,33 @@ Variable not defined.
 Program exited successfully
 ```
 
+## Exceptions with Functions
 
+If an exception is raised within a function and is not handled within that function, then the function is immediately exited. The calling function is checked for a handler, and so on up the function call hierarchy.
 
-## Iterating over the List
-
-Looping through a sequence such as a list is so common that Python supports a construct called a for loop, specifically for iteration purposes. Let's write a function in Python that removes duplicates from a give list. We do this by iterating through the given list, item by item.
-
+The program below crashes because it tries to access an index of a list which is not available. Hence, it crashes the function and then the whole program.
 ```python
-def remove_duplicates(fruits):
-    new_fruits = []
+def sum_of_elements(numbers):
+    sum = 0
+    for i in range(len(numbers) + 1):
+        sum += numbers[i]
 
-    for fruit in fruits:
-        if fruit not in new_fruits:
-            new_fruits.append(fruit)
-    
-    return new_fruits
+    return sum
 
-fruits = ['Melon','Apple', 'Banana', 'Grapes', 'Orange', 'Apple', 'Grapes']
+numbers = [1, 2, 3, 4, 5]
 
-print(remove_duplicates(fruits))
+print(sum_of_elements(numbers))
 ```
 Below will be the output of the above program:
 ```
-['Melon', 'Apple', 'Banana', 'Grapes', 'Orange']
+Traceback (most recent call last):
+  File "c:\Users\iqbal1r\Documents\CPS190\Week_3.py", line 13, in <module>
+    print(sum_of_elements(numbers))
+          ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "c:\Users\iqbal1r\Documents\CPS190\Week_3.py", line 6, in sum_of_elements
+    sum += numbers[i]
+           ~~~~~~~^^^
+IndexError: list index out of range
 ```
 
 ## List Comprehension
