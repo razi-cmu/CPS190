@@ -15,18 +15,20 @@ Traceback (most recent call last):
 NameError: name 'x' is not defined
 ```
 
-Lists can contain different types of items. Lists can stores lists inside them.
+In order to fix the above program so that it does not crash, we can use the concept of Exception Handling in Python.
 ```python
-
-fruits = ['Apple', 'Banana', 'Grapes', 'Orange', [True, 3.14]]
-
-print(fruits)
+try:
+    print(x)
+except:
+    print("An error occured. x is not defined")
 ```
 Below will be the output of the above program:
 ```
-['Apple', 'Banana', 'Grapes', 'Orange', [True, 3.14]]
+An error occured. x is not defined
 ```
-List items can be accessed through indexing, very similar to Strings (which are actually lists of characters)
+
+## Common Exception Types
+There are several types of exceptions available in Python. A common one is `ZeroDivisionError` that occurs when a number is divided by zero
 ```python
 fruits = ['Apple', 'Banana', 'Grapes', 'Orange', [True, 3.14]]
 
@@ -34,99 +36,55 @@ print(fruits[0])
 ```
 Below will be the output of the above program:
 ```
-Apple
+Traceback (most recent call last):
+  File "c:\Users\iqbal1r\Documents\CPS190\Week_3.py", line 2, in <module>
+    result = number / 0
+             ~~~~~~~^~~
+ZeroDivisionError: division by zero
 ```
-Items within lists of lists can be accessed by multi indexing as below:
+You might have noticed that `Program exited successfully` was not printed on the console as it crashed before the control can reach that print statement. This can be fixed by putting the vulnerable code in the try block.
 ```python
-fruits = ['Apple', 'Banana', 'Grapes', 'Orange', [True, 3.14]]
+try:
+    number = 5
+    result = number / 0
+    print(result)
+except:
+    print('Cannot divided by zero.')
 
-print(fruits[4][1])
+print('Program exited successfully')
+
 ```
 Below will be the output of the above program:
 ```
-3.14
+Cannot divided by zero.
+Program exited successfully
 ```
-## List Methods
+## Multiple Exception Handler
 A list method can perform a useful operation on a list such as adding or removing elements, sorting, reversing, etc.
 
-### Append / Extend
-`append` method adds an element to the end of the list.
 ```python
-fruits = ['Apple', 'Banana', 'Grapes', 'Orange']
+try:
+    number = 5
+    result = number / 2
+    print(result)
 
-fruits.append('Melon')
+    print(x)
+except ZeroDivisionError:
+    print('Cannot divided by zero.')
+except NameError:
+    print('Variable not defined.')
 
-print(fruits)
+print('Program exited successfully')
+
 ```
 Below will be the output of the above program:
 ```
-['Apple', 'Banana', 'Grapes', 'Orange', 'Melon']
-```
-`extend` method helps in adding a list of items to the end of the current list.
-```python
-fruits = ['Apple', 'Banana', 'Grapes', 'Orange']
-
-fruits.extend(['Melon', 'Strawberry'])
-
-print(fruits)
-```
-Below will be the output of the above program:
-```
-['Apple', 'Banana', 'Grapes', 'Orange', 'Melon', 'Strawberry']
+2.5
+Variable not defined.
+Program exited successfully
 ```
 
-### Remove / Pop
-`remove` method removes a specific element from the list:
-```python
-fruits = ['Apple', 'Banana', 'Grapes', 'Orange']
 
-fruits.remove('Banana')
-
-print(fruits)
-```
-Below will be the output of the above program:
-```
-['Apple', 'Grapes', 'Orange']
-```
-`pop` removes the last element from the list or an element at a specific index:
-```python
-fruits = ['Apple', 'Banana', 'Grapes', 'Orange']
-
-fruits.pop(2) # removes Grapes
-fruits.pop()  # removes Orange
-
-print(fruits)
-```
-Below will be the output of the above program:
-```
-['Apple', 'Banana']
-```
-
-### Sort / Reverse
-`sorted` method helps in sorting the list in ascending order:
-```python
-fruits = ['Melon','Apple', 'Banana', 'Grapes', 'Orange']
-
-fruits.sort()
-
-print(fruits)
-```
-Below will be the output of the above program:
-```
-['Apple', 'Banana', 'Grapes', 'Melon', 'Orange']
-```
-`reverse` method reverses the list:
-```python
-fruits = ['Melon','Apple', 'Banana', 'Grapes', 'Orange']
-
-fruits.reverse()
-
-print(fruits)
-```
-Below will be the output of the above program:
-```
-['Orange', 'Grapes', 'Banana', 'Apple', 'Melon']
-```
 
 ## Iterating over the List
 
